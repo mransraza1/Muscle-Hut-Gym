@@ -1,0 +1,10 @@
+{
+  "name": "Remix Muscle Hut Gym",
+  "description": "Premium cinematic website for Muscle Hut Gym featuring 3D visual identity, interactive Google Maps directions, facility showcase, verified member reviews, membership tiers, and instant trial pass booking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

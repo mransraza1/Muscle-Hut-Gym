@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Prevent "Cannot set property fetch of #<Window> which has only a getter" error in sandboxed/iframe environments
+      (function() {
+        try {
+          var _fetch = window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _fetch;
+            },
+            set: function(val) {
+              _fetch = val;
+            },
+            configurable: true,
+            enumerable: true,
+          });
+        } catch (e) {
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              var _protoFetch = Window.prototype.fetch;
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() {
+                  return _protoFetch;
+                },
+                set: function(val) {
+                  _protoFetch = val;
+                },
+                configurable: true,
+                enumerable: true,
+              });
+            }
+          } catch (e2) {}
+        }
+      })();
+    </script>
+    <title>Muscle Hut Gym | Premier Fitness & Strength Training Center Agra</title>
+    <meta name="description" content="Transform your body & mind at Muscle Hut Gym, Agra's premier fitness destination. Elite trainers, state-of-the-art strength & cardio equipment, personal coaching & vibrant community." />
+    <meta property="og:title" content="Muscle Hut Gym | Premier Fitness & Strength Training Center" />
+    <meta property="og:description" content="State-of-the-art equipment, certified trainers, dynamic fitness classes, and 4.7★ rated community in Agra." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0a0a0a] text-[#e0e0e0] selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
